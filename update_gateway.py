@@ -918,6 +918,13 @@ if __name__ == "__main__":
         logger.error(f"🚫 Failed to cache rules/lists: {e}", exc_info=True)
         sys.exit(1)
 
+    for r in cached_rules:
+        logger.info(
+            f"RULE: id={r.get('id')} "
+            f"name={r.get('name')} "
+            f"priority={r.get('priority') or r.get('precedence')}"
+        )
+
     # Process filters with async
     stats = {
         "filters_processed": 0,
