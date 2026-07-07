@@ -55,13 +55,13 @@ session.headers.update(headers)
 # Blocklists configuration with explicit priorities
 # Priority order (lower number = higher priority):
 # 1-9999: Reserved for custom policies (Allow Rules, Content Blocking, etc.)
-# 10000+: Hagezi filters (ordered by importance)
+# 50000+: Hagezi filters (ordered by importance)
 blocklists: List[Dict[str, str]] = [
     {
         "name": "Hagezi Pro++",
         "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/pro.plus-onlydomains.txt",
         "backup_url": "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/pro.plus-onlydomains.txt",
-        "priority": 10000
+        "priority": 50000
     }
 ]
 
